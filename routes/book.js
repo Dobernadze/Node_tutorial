@@ -3,7 +3,7 @@ const bookRouter = express.Router();
 
 
 bookRouter
-  .route('/book') 
+  .route('/') 
   .get((req, res) => {
     res.send('All books')
 })
@@ -11,9 +11,9 @@ bookRouter
     res.json({data:'Book is stored'})
   })
 
-bookRouter.get('/book/:id', (req, res) => {
+bookRouter.get('/:id', (req, res) => {
   res.send(`Single book of ID:${req.params.id}`)
 })
 
 
-module.exports = router
+module.exports = bookRouter
